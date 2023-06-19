@@ -8,17 +8,16 @@ import java.util.*;
 
 public class Task_1 {
 
-    static void delOdd(List<Integer> arrList) {
+    static void udalChet(List<Integer> arrList) {
         for (int i=0; i < arrList.size()-1; i++) {
             if (arrList.get(i) % 2 == 0) {
                 arrList.remove(i);
             }
         } 
-        System.out.println("После удаления четных: " + arrList);
-    
-    
+        System.out.println("Остаток после удаления чётных: " + arrList);
+        
     }
-    static Integer Maxx(List<Integer> arrList) {
+    static Integer MaxNum(List<Integer> arrList) {
         int max = arrList.get(0); 
         for (int i=0; i < arrList.size()-1; i++) {
             if (arrList.get(i) > max) {
@@ -27,7 +26,7 @@ public class Task_1 {
         } 
         return max;
     }
-    static Integer Minn(List<Integer> arrList) {
+    static Integer MinNum(List<Integer> arrList) {
         int min = arrList.get(0); 
         for (int i=0; i < arrList.size()-1; i++) {
             if (arrList.get(i) < min) {
@@ -36,37 +35,22 @@ public class Task_1 {
         } 
         return min;
     }
-     static Double Aver(List<Integer> arrList) {
+     static Double Sredn(List<Integer> arrList) {
         int sum = 0; 
-        double average;
+        double srednee;
         for (int i=0; i < arrList.size()-1; i++) {
             sum += arrList.get(i);
         } 
-        average = sum / arrList.size();
-        return average;
+        srednee = sum / arrList.size();
+        return srednee;
     }
     
     public static void main(String[] args) {
-        int total = 0; // сумма элементов списка
-        int count; // количество элементов списка
-        int listMax; // минимальное значение
-        int listMin; // максимальное значение
-        double average = 0;
-
-        List<Integer> list_1 = new ArrayList(Arrays.asList(2, 15, 4, 7, 18, 19, 9, 6, 3, 5));
-                        
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("Исходный список: " + list_1);
-        System.out.println("Минимальное значение: " + Minn(list_1));
-        System.out.println("Максимальное значение: " + Maxx(list_1));
-        System.out.println("Среднее значение: " + Aver(list_1));
-        delOdd(list_1);
-        System.out.println(list_1);
-        
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        List<Integer> list_num = new ArrayList(Arrays.asList(4, 23, 6, 9, 18, 39, 4, 37, 17, 3));
+        System.out.println("Изначальный список: " + list_num);
+        System.out.println("Минимальное значение: " + MinNum(list_num));
+        System.out.println("Максимальное значение: " + MaxNum(list_num));
+        System.out.println("Среднее значение: " + Sredn(list_num));
+        udalChet(list_num);
     }
 }
